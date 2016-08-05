@@ -51,6 +51,7 @@
 **第二，按照下图布局建立view**
 先后添加view_1、view_2 、view_3 添加到父视图view_father上，其中view_2,view_3重叠，view_3.userInteractionEnable=NO
 **第三，按照点击1、2、3 分别点击视图相关位置，查看输出结果**
+![布局](http://img2.ph.126.net/XDn8inGzKC02ZlNepF3BOg==/6631666999537226621.png)
 *点击位置1输出结果：*
 >name:::view_father___hitTest:withEvent:
 >name:::view_father___pointInside:withEvent:
