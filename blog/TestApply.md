@@ -1,6 +1,6 @@
 ###HitTest 应用
-####扩大点击区域
-这应该是最常用的功能了，在不改变控件现有frame布局的情况下，扩大控件的响应区域
+####改变点击区域
+这应该是最常用的功能了，在不改变控件现有frame布局的情况下，扩大缩小甚至定制控件的响应区域
 ```
 @interface KVTouchExpandView : UIView
 @property(nonatomic,assign)UIEdgeInsets expandInset;
@@ -19,11 +19,9 @@
 @end
 ```
 
-####管理零碎控件（事件透传）
+####容器控件（事件透传）
 
-以一个典型的播放器操控UI为例
-![dddd](http://img0.ph.126.net/9PRVsvwXNdd092tWcUPcWg==/6631554849351457191.jpg)
-这个操控页面可以分为，三块topview、bottomview、其他，对于其他里面的三个零碎控件，若是把他们和topview以及bottomview平行的话，代码会很难看，而且不好管理,*对于比较零散的功能控件，可以创建一个承载view把它们聚合到一起,统一管理，承载view只有承载功能，触摸事件可被子视图捕获，承载view本身不响应任何事件*
+很多时候，我们对于UIView，只想用它作为一个容器来管理众多零碎的空间,同时有不能阻碍其兄弟视图子视图及父视图的手势响应，可以用hitest进行过滤
 ```
 - (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
